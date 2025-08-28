@@ -1,4 +1,5 @@
 import type { FastifyInstance } from "fastify";
+import { categoryRoutes } from "./category.routes";
 
 export async function routes(fastify: FastifyInstance): Promise<void> {
 	fastify.get("/alive", async () => {
@@ -7,4 +8,6 @@ export async function routes(fastify: FastifyInstance): Promise<void> {
 			message: "EasyBills API está em produção.",
 		};
 	});
+
+	fastify.register(categoryRoutes, { prefix: "/categories" });
 }

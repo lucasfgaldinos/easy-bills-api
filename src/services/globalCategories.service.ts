@@ -38,7 +38,7 @@ export async function initializeGlobalCategories(): Promise<Category[]> {
 					data: category,
 				});
 				createdCategories.push(newCategory);
-				console.log(`✔️ Categoria criada: ${newCategory.name}`);
+				console.log(`✔️ Category created: ${newCategory.name}`);
 			} else {
 				createdCategories.push(categoryExists);
 			}
@@ -47,7 +47,7 @@ export async function initializeGlobalCategories(): Promise<Category[]> {
 		}
 	}
 
-	console.log("✅ Categorias inicializadas!");
+	console.log("✅ Initialized categories!");
 
 	return createdCategories;
 }
