@@ -1,4 +1,5 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
+import { StatusCodes } from "http-status-codes";
 import { prisma } from "../config/prisma";
 
 export async function getCategories(
@@ -10,13 +11,11 @@ export async function getCategories(
 			orderBy: { name: "asc" },
 		});
 
-		reply.code(200).send(categories);
+		reply.code(StatusCodes.OK).send(categories);
 	} catch (err) {
 		request.log.error("Something went wrong while searching for categories!");
-		reply
-			.code(500)
-			.send({
-				message: "Something went wrong while searching for categories!",
-			});
+		reply.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
+			message: "Something went wrong while searching for categories!",
+		});
 	}
 }
