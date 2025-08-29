@@ -1,5 +1,5 @@
 import { type Category, TransactionType } from "@prisma/client";
-import { prisma } from "../config/prisma";
+import { prisma } from "../config/prisma.config";
 
 type GlobalCategoryInput = Pick<Category, "name" | "color" | "type">;
 

@@ -1,6 +1,6 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { StatusCodes } from "http-status-codes";
-import { prisma } from "../config/prisma";
+import { prisma } from "../config/prisma.config";
 
 export async function getCategories(
 	request: FastifyRequest,
