@@ -1,10 +1,13 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../../config/prisma.config";
-import { createTransactionSchema } from "../../schemas/transaction.schema";
+import {
+	type CreateTransaction,
+	createTransactionSchema,
+} from "../../schemas/transaction.schema";
 
 export async function createTransaction(
-	request: FastifyRequest,
+	request: FastifyRequest<{ Body: CreateTransaction }>,
 	reply: FastifyReply,
 ): Promise<void> {
 	const userId = "8sd67fj9a87d9666adf3e"; // Simulando o userId => request.userId

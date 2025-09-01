@@ -19,3 +19,22 @@ export const createTransactionSchema = z.object({
 		errorMap: () => ({ message: "Invalid enum." }),
 	}),
 });
+
+export const getTransactionsSchema = z.object({
+	month: z.string().optional(),
+	year: z.string().optional(),
+	type: z
+		.enum([TransactionType.expense, TransactionType.income], {
+			errorMap: () => ({ message: "Invalid enum." }),
+		})
+		.optional(),
+	categoryId: z
+		.string()
+		.refine(isValidObjectId, {
+			message: "Ivalid categoryId.",
+		})
+		.optional(),
+});
+
+export type GetTransactionsQuery = z.infer<typeof getTransactionsSchema>;
+export type CreateTransaction = z.infer<typeof createTransactionSchema>;
