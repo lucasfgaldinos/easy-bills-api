@@ -1,5 +1,9 @@
 import type { FastifyInstance } from "fastify";
-import { createTransaction, getTransactions } from "../controllers";
+import {
+	createTransaction,
+	getTransactions,
+	getTransactionsSummary,
+} from "../controllers";
 
 export async function transactionRoutes(
 	fastify: FastifyInstance,
@@ -16,5 +20,12 @@ export async function transactionRoutes(
 		method: "GET",
 		url: "/",
 		handler: getTransactions,
+	});
+
+	// Buscar o resumo das transações
+	fastify.route({
+		method: "GET",
+		url: "/summary",
+		handler: getTransactionsSummary,
 	});
 }
