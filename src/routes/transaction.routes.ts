@@ -1,6 +1,7 @@
 import type { FastifyInstance } from "fastify";
 import {
 	createTransaction,
+	deleteTransaction,
 	getTransactions,
 	getTransactionsSummary,
 } from "../controllers";
@@ -27,5 +28,12 @@ export async function transactionRoutes(
 		method: "GET",
 		url: "/summary",
 		handler: getTransactionsSummary,
+	});
+
+	// Deletar transação
+	fastify.route({
+		method: "DELETE",
+		url: "/:transactionId",
+		handler: deleteTransaction,
 	});
 }
