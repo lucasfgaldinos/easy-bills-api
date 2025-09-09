@@ -1,9 +1,12 @@
 import { app } from "./app";
 import { env } from "./config/env.config";
+import { initializeFirebaseAdmin } from "./config/firebase";
 import { prismaConnect } from "./config/prisma.config";
 import { initializeGlobalCategories } from "./services/globalCategories.service";
 
 const PORT = env?.PORT;
+
+initializeFirebaseAdmin();
 
 async function startServer() {
 	try {

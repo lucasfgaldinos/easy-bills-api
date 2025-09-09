@@ -26,6 +26,7 @@
 		"dayjs": "^1.11.18",
 		"dotenv": "^17.2.1",
 		"fastify": "^5.5.0",
+		"firebase-admin": "^13.5.0",
 		"http-status-codes": "^2.3.0",
 		"mongodb": "^6.19.0",
 		"zod": "^3.25.76"

@@ -7,6 +7,10 @@ const envSchema = z.object({
 	PORT: z.string().transform(Number).default("4000"),
 	DATABASE_URL: z.string(),
 	NODE_ENV: z.enum(["dev", "test", "prod"]),
+	// Firebase
+	FIREBASE_PROJECT_ID: z.string().optional(),
+	FIREBASE_PRIVATE_KEY: z.string().optional(),
+	FIREBASE_CLIENT_EMAIL: z.string().optional(),
 });
 
 const envValidation = envSchema.safeParse(process.env);
