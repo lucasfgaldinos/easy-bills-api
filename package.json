@@ -21,6 +21,7 @@
 		"typescript": "^5.9.2"
 	},
 	"dependencies": {
+		"@fastify/cors": "^11.1.0",
 		"@prisma/client": "^6.15.0",
 		"dayjs": "^1.11.18",
 		"dotenv": "^17.2.1",
