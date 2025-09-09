@@ -11,7 +11,7 @@ export async function getTransactionsSummary(
 	request: FastifyRequest<{ Querystring: GetTransactionsSummaryQuery }>,
 	reply: FastifyReply,
 ): Promise<void> {
-	const userId = "8sd67fj9a87d9666adf3e"; // Simulando o userId => request.userId
+	const { userId } = request;
 
 	if (!userId) {
 		return reply

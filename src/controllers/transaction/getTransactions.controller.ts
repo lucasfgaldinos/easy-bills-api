@@ -9,7 +9,7 @@ export async function getTransactions(
 	request: FastifyRequest<{ Querystring: GetTransactionsQuery }>,
 	reply: FastifyReply,
 ): Promise<void> {
-	const userId = "8sd67fj9a87d9666adf3e"; // Simulando o userId => request.userId
+	const { userId } = request;
 
 	if (!userId) {
 		return reply
