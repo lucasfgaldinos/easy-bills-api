@@ -12,8 +12,7 @@ export async function authMiddleware(
 	request: FastifyRequest,
 	reply: FastifyReply,
 ): Promise<void> {
-	// const authHeader = request.headers.authorization;
-	const authHeader = "token";
+	const authHeader = request.headers.authorization;
 
 	if (!authHeader || !authHeader.startsWith("Bearer ")) {
 		return reply
@@ -28,9 +27,9 @@ export async function authMiddleware(
 
 		request.userId = decodedToken.uid;
 	} catch (err) {
-		request.log.error("Error verifying token!");
+		request.log.error("Invalid token!");
 		return reply
-			.status(StatusCodes.BAD_REQUEST)
-			.send({ error: "Error verifying token!" });
+			.status(StatusCodes.UNAUTHORIZED)
+			.send({ error: "Invalid token!" });
 	}
 }
