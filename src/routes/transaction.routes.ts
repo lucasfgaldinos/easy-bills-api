@@ -5,6 +5,7 @@ import {
 	getTransactions,
 	getTransactionsSummary,
 } from "../controllers";
+import { getTransactionsByMonths } from "../controllers/transaction/getTransactionsHistorical.controller";
 import { authMiddleware } from "../middlewares/auth.middleware";
 
 export async function transactionRoutes(
@@ -19,18 +20,25 @@ export async function transactionRoutes(
 		handler: createTransaction,
 	});
 
-	// Buscar transações com filtros
+	// Transações com filtros
 	fastify.route({
 		method: "GET",
 		url: "/",
 		handler: getTransactions,
 	});
 
-	// Buscar o resumo das transações
+	// Resumo das transações
 	fastify.route({
 		method: "GET",
 		url: "/summary",
 		handler: getTransactionsSummary,
+	});
+
+	// Histórico semestral de transações
+	fastify.route({
+		method: "GET",
+		url: "/historical",
+		handler: getTransactionsByMonths,
 	});
 
 	// Deletar transação
