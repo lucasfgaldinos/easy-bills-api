@@ -3,9 +3,9 @@ import {
 	createTransaction,
 	deleteTransaction,
 	getTransactions,
+	getTransactionsByMonths,
 	getTransactionsSummary,
 } from "../controllers";
-import { getTransactionsByMonths } from "../controllers/transaction/getTransactionsHistorical.controller";
 import { authMiddleware } from "../middlewares/auth.middleware";
 
 export async function transactionRoutes(
