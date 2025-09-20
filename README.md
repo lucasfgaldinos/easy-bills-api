@@ -15,6 +15,17 @@ Este é o backend do projeto **EasyBills**, um dashboard financeiro moderno, int
 ![dotenv](https://img.shields.io/badge/dotenv-000000?style=for-the-badge&logo=dotenv&logoColor=white)<br/>
 ![HTTP Status Codes](https://img.shields.io/badge/HTTP_Status_Codes-4A90E2?style=for-the-badge&logo=http&logoColor=white)<br/>
 
+## ✅ Funcionalidades do Backend
+
+- 🔐 Autenticação com Firebase
+- 🧾 CRUD de transações (receitas e despesas)
+- 📊 Resumo financeiro por período
+- 🗂️ Filtros por tipo, categoria e data
+- 🧪 Validação de dados com Zod
+- 🗃️ Integração com MongoDB via Prisma
+- ⚡ API REST construída com Fastify
+
+
 ## 🔗 Link do Frontend
 
 [Repositório do Frontend](https://github.com/lucasfgaldinos/easybills-interface)
